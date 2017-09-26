@@ -8,7 +8,7 @@ export PROJECT=my-project
 export KEYRING=testkeyring
 export KEYNAME=testkey
 export DATALAB_NAME=testlab
-export REPOSITORY=nownabe/datalab-test
+export REPOSITORY=username/my-repository
 export SERVICE_ACCOUNT=my-service-account@my-project.iam.gserviceaccount.com
 ```
 
