@@ -36,7 +36,7 @@ $(cat id_rsa.encrypted)
 EOF
 
 curl -s -X POST "https://cloudkms.googleapis.com/v1/projects/$(gcloud config get-value project)/locations/global/keyRings/${KEYRING}/cryptoKeys/${KEYNAME}:decrypt" \\\\
-  -d "{\\"ciphertext\\":\\"\\\$(cat /content/datalab/.config/.ssh/id_rsa.encrypted)\\"}" \\\\
+  -d "{\\"ciphertext\\":\\"\\\$(</content/datalab/.config/.ssh/id_rsa.encrypted tr -d "\n")\\"}" \\\\
   -H "Authorization: Bearer \\\$(gcloud auth application-default print-access-token)" \\\\
   -H "Content-Type: application/json" \\\\
   | jq ".plaintext" \\\\
