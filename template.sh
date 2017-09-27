@@ -5,7 +5,7 @@ cat <<SCRIPT > /content/datalab/.config/startup.sh
 apt-get -o APT::Sandbox::User=root update 
 
 # Upgrade git
-if ! (git --version | greq -q 2.14.2); then
+if ! (git --version | grep -q 2.14.2); then
   pushd .
   apt-get -o APT::Sandbox::User=root install -y build-essential libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext gzip
   cd /usr/local/src
